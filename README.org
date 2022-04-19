@@ -5,15 +5,17 @@
 #+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB W3}
 #+LATEX_COMPILER: xelatex
 
-* Table of Contents [1/32]
+* Table of Contents [2/32]
 
 ** DONE 01 Introduction: Why Lisp?
 
 ~the programmable programming language~
 
-** STRT 02 Lather, Rinse, Repeat: A Tour of the REPL
+** DONE 02 Lather, Rinse, Repeat: A Tour of the REPL
 
-** TODO 03 Practical: A Simple Database
+~(load (compile-file "/path/to/hello.lisp"))~
+
+** STRT 03 Practical: A Simple Database
 
 ** TODO 04 Syntax and Semantics
 
