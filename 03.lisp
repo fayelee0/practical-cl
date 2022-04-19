@@ -1,6 +1,12 @@
 ;;;; 03 practical, a simple database
 
-(list 1 2 3)
+;; normal list
+(list 1 2 3 4)
+
+;; plist
+(list :a 1 :b 2 :c 3 :d 4)
+(getf (list :a 1 :b 2 :c 3 :d 4) :a)
+(getf (list :a 1 :b 2 :c 3 :d 4) :c)
 
 ;; make cd
 (defun make-cd (title artist rating ripped)
@@ -9,7 +15,10 @@
         :rating rating
         :ripped ripped))
 
+(make-cd "Roses" "Kathy Mattea" 7 t)
+
 ;; global store
+;; 全局变量请使用 ** 来包围，因为 CL 里动态作用域和词法作用域，有时会到导致奇怪的问题
 (defvar *db* nil)
 
 (defun add-record (cd)
@@ -22,7 +31,7 @@
 *db*
 
 (defun dump-db ()
-  (dolist (cd *db* )
+  (dolist (cd *db*)
     (format t "~{~a:~10t~a~%~}~%" cd)))
 
 (dump-db)
@@ -62,22 +71,25 @@
 
 
 ;;; query db
-(remove-if-not #'evenp '(1 2 3 4 5 6 7 8 9 0))
-(remove-if-not #'(lambda (x) (zerop (mod x 2)))
-               '(1 2 3 4 5 6 7 8 9 0))
+;; (remove-if-not #'evenp '(1 2 3 4 5 6 7 8 9 0))
+(remove-if (complement #'evenp) '(1 2 3 4 5 6 7 8 9 0))
+
+;; (remove-if-not #'(lambda (x) (zerop (mod x 2)))
+;;                '(1 2 3 4 5 6 7 8 9 0))
+(remove-if (complement #'(lambda (x) (zerop (mod x 2))))
+           '(1 2 3 4 5 6 7 8 9 0))
 
 
-(remove-if-not
- #'(lambda (cd)
-     (equal
-      (getf cd :artist)
-      "Dixie Chicks"))
- *db*)
+;; (remove-if-not #'(lambda (cd) (equal (getf cd :artist) "Dixie Chicks"))
+;;                *db*)
+(remove-if (complement
+            #'(lambda (cd) (equal (getf cd :artist) "Dixie Chicks")))
+           *db*)
 
 (defun select-by-artist (artist)
-  (remove-if-not
-   #'(lambda (cd) (equal (getf cd :artist) artist))
-   *db*))
+  (remove-if (complement
+              #'(lambda (cd) (equal (getf cd :artist) artist)))
+             *db*))
 
 (select-by-artist "Dixie Chicks")
 
@@ -85,7 +97,7 @@
   #'(lambda (cd) (equal (getf cd :artist) artist)))
 
 (defun select (selector-fn)
-  (remove-if-not selector-fn *db*))
+ (remove-if (complement selector-fn) *db*))
 
 (select (artist-selector "Dixie Chicks"))
 
@@ -128,7 +140,6 @@
 
 (defmacro backwards (expr) (reverse expr))
 
-
 (backwards ("hello, world" t format))
 
 (defun make-comparison-expr (field value)
@@ -148,11 +159,8 @@
 
 
 (defun make-comparison-list (fields)
-  (loop
-    while
-    fields
-    collecting
-    (make-comparison-expr (pop fields) (pop fields))))
+  (loop while fields
+        collecting (make-comparison-expr (pop fields) (pop fields))))
 
 (defmacro where (&rest clauses)
   `#'(lambda (cd) (and ,@(make-comparison-list clauses))))
