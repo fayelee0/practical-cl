@@ -1,3 +1,74 @@
-#+TITLE: README
+#+TITLE: [[https://gigamonkeys.com/book/][Practical Common Lisp]]
+#+AUTHOR: Faye V. Lee <faye.v.lee@gmail.com>
+#+DATE: <2022-04-19 Tue>
+#+LATEX_HEADER: \usepackage{ctex}
+#+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB W3}
+#+LATEX_COMPILER: xelatex
 
-* [[https://gigamonkeys.com/book/][Practical Common Lisp]]
+* Table of Contents [1/32]
+
+** DONE 01 Introduction: Why Lisp?
+
+~the programmable programming language~
+
+** STRT 02 Lather, Rinse, Repeat: A Tour of the REPL
+
+** TODO 03 Practical: A Simple Database
+
+** TODO 04 Syntax and Semantics
+
+** TODO 05 Functions
+
+** TODO 06 Variables
+
+** TODO 07 Macros: Standard Control Constructs
+
+** TODO 08 Macros: Defining Your Own
+
+** TODO 09 Practical: Building a Unit Test Framework
+
+** TODO 10 Numbers, Characters, and Strings
+
+** TODO 11 Collections
+
+** TODO 12 They Called It LISP for a Reason: List Processing
+
+** TODO 13 Beyond Lists: Other Users for Cons Cells
+
+** TODO 14 Files and File I/O
+
+** TODO 15 Practical: A Protable Pathname Library
+
+** TODO 16 Object Reorientation: Generic Functions
+
+** TODO 17 Object Reorientation: Classes
+
+** TODO 18 A Few FORMAT Receipes
+
+** TODO 19 Beyond Exception Handling: Conditions and Restarts
+
+** TODO 20 The Special Operators
+
+** TODO 21 Programming in the Large: Packages and Symbols
+
+** TODO 22 LOOP for Black Belts
+
+** TODO 23 Practical: A Spam Filter
+
+** TODO 24 Practical: Parsing Binary Files
+
+** TODO 25 Practical: An ID3 Parser
+
+** TODO 26 Practical: Web Programming with AllegoServe
+
+** TODO 27 Practical: An MP3 Database
+
+** TODO 28 Practical: A Shoutcast Server
+
+** TODO 29 Practical: An MP3 Browser
+
+** TODO 30 Practical: An HTML Generation Library, the Interpreter
+
+** TODO 31 Practical: An HTML Generation Library, the Compiler
+
+** TODO 32 Conculstion: What's Next?
