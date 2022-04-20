@@ -5,7 +5,7 @@
 #+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB W3}
 #+LATEX_COMPILER: xelatex
 
-* Table of Contents [3/32]
+* Table of Contents [6/32]
 
 ** DONE 01 Introduction: Why Lisp?
 
@@ -17,13 +17,37 @@
 
 ** DONE 03 Practical: A Simple Database
 
-** STRT 04 Syntax and Semantics
+** DONE 04 Syntax and Semantics
 
-** TODO 05 Functions
+~quote~
+~list~
+~`~
 
-** TODO 06 Variables
+~eq eql equal equalp~
 
-** TODO 07 Macros: Standard Control Constructs
+** DONE 05 Functions
+
+~function~
+~#'~
+~funcall~
+~apply~
+
+** DONE 06 Variables
+
+~setf~
+~defvar~
+~defparameter~
+~push~
+~pop~
+~incf~
+~decf~
+~rotatef~
+~shiftf~
+~random~
+~getf~
+~let~
+
+** STRT 07 Macros: Standard Control Constructs
 
 ** TODO 08 Macros: Defining Your Own
 
