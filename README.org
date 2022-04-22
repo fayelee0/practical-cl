@@ -5,7 +5,7 @@
 #+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB W3}
 #+LATEX_COMPILER: xelatex
 
-* Table of Contents [6/32]
+* Table of Contents [7/32]
 
 ** DONE 01 Introduction: Why Lisp?
 
@@ -47,9 +47,14 @@
 ~getf~
 ~let~
 
-** STRT 07 Macros: Standard Control Constructs
+** DONE 07 Macros: Standard Control Constructs
 
-** TODO 08 Macros: Defining Your Own
+~macroexpand-1~
+~macroexpand~
+~do dotimes dolist~
+~loop~
+
+** STRT 08 Macros: Defining Your Own
 
 ** TODO 09 Practical: Building a Unit Test Framework
 

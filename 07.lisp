@@ -1,21 +1,26 @@
-;;;; 07 macros
+;;;; 07 Macros: standard control constructs
 
 (if (> 2 3) "Yup" "Nope")
 (if (> 2 3) "Yup")
 (if (> 3 2) "Yup" "Nope")
 
-(fboundp 'when)
-(defmacro _when (condition &rest body)
+
+(defmacro ^when (condition &rest body)
   `(if ,condition (progn ,@body)))
 
 (macroexpand-1
- '(_when (spam-p current-message)
+ '(^when (spam-p current-message)
    (file-in-spam-folder current-message)
    (update-spam-database current-message)))
 
-(fboundp 'unless)
-(defmacro _unless (condition &rest body)
+
+(defmacro ^unless (condition &rest body)
   `(if (not ,condition) (progn ,@body)))
+
+
+(macroexpand-1
+ `(and 1 2 3))
+
 
 (macroexpand-1
  '(dolist (x '(1 2 3 4 5))
@@ -42,10 +47,15 @@
     (format t "~3d " (* (1+ x) (1+ y))))
   (format t "~%"))
 
-
+;; n c nx
+;; 0 0 1
+;; 1 1 1
+;; 2 1 2
+;; 3 2 3
+;; ...
 (do ((n 0 (1+ n))
      (cur 0 next)
-     (next 1 (+ cur next)))
+     (next 1 (+ cur next)))             ; let
     ((= 10 n) cur))
 
 (do ((i 0 (1+ i)))
