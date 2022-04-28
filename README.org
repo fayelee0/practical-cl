@@ -5,7 +5,7 @@
 #+LATEX_HEADER: \setCJKmainfont{Hiragino Sans GB W3}
 #+LATEX_COMPILER: xelatex
 
-* Table of Contents [7/32]
+* Table of Contents [8/32]
 
 ** DONE 01 Introduction: Why Lisp?
 
@@ -54,9 +54,9 @@
 ~do dotimes dolist~
 ~loop~
 
-** STRT 08 Macros: Defining Your Own
+** DONE 08 Macros: Defining Your Own
 
-** TODO 09 Practical: Building a Unit Test Framework
+** STRT 09 Practical: Building a Unit Test Framework
 
 ** TODO 10 Numbers, Characters, and Strings
 
